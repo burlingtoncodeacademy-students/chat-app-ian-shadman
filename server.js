@@ -24,6 +24,7 @@ const homeMessageSchema = new mongoose.Schema({
   author: String,
   messageBody: String,
 });
+
 const HomeMessage = mongoose.model("HomeMessage", homeMessageSchema)
 
 app.post("/homeMessage", async (req, res) => {
