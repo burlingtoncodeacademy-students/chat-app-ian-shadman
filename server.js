@@ -18,7 +18,7 @@ db.on("error", console.error.bind(console, "connection error"));
 
 app.use(express.static(staticDir));
 app.use(express.urlencoded({ extended: true }));
-
+// set schema for messages on the main room
 const homeMessageSchema = new mongoose.Schema({
   when: Date,
   author: String,
@@ -26,9 +26,22 @@ const homeMessageSchema = new mongoose.Schema({
 });
 
 const HomeMessage = mongoose.model("HomeMessage", homeMessageSchema)
+//takes the username from the login and attaches it to the url
+app.post("/login", (req, res) => {
+  let userName = req.body.user
+  res.redirect(`/mainMessage/${userName}`)
+})
+// initialize authorObj
+let authorObj;
+// set authorObj to the user param in the url
+app.get("/username/:user", async (req, res) => {
+  authorObj = req.params.user
+})
 
-app.post("/homeMessage", async (req, res) => {
-  let author = req.body.author
+// post when you submit a message
+app.post("/mainMessage/:user", async (req, res) => {
+  // sets author to the authorObj assigned above
+  let author = authorObj
   let messageBody = req.body.messageBody
   let when = new Date()
   const response = new HomeMessage({
@@ -37,8 +50,12 @@ app.post("/homeMessage", async (req, res) => {
     when: when
   })
   await response.save()
-  res.redirect('/')
+  res.redirect('/mainMessage/:user')
 });
+
+app.get("/messageColl", (req, res) => {
+  
+})
 
 app.listen(port, () => {
   console.log("listening on port: " + port);
