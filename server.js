@@ -7,16 +7,16 @@ const app = express();
 const staticDir = process.env.DEV ? "./client/public" : "./client/build";
 
 const mongoose = require("mongoose");
-// mongoose.connect(
-//   `
-// mongodb+srv://user:${process.env.PASSWORD}@cluster0.ai7da.mongodb.net/chatroom?retryWrites=true&w=majority`,
-//   { useNewUrlParser: true, useUnifiedTopology: true }
-// );
-
 mongoose.connect(
-  `mongodb://localhost:27017/test`,
+  `
+mongodb+srv://user:${process.env.PASSWORD}@cluster0.ai7da.mongodb.net/chatroom?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
+
+// mongoose.connect(
+//   `mongodb://localhost:27017/test`,
+//   { useNewUrlParser: true, useUnifiedTopology: true }
+// );
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error"));
