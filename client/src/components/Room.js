@@ -3,6 +3,7 @@ import "../styles/room.css";
 import React from "react";
 
 const Room = () => {
+  // State hooks for setting 
   const [messages, setMessages] = useState("");
   const [user, setUser] = useState("");
 
@@ -44,7 +45,7 @@ const Room = () => {
     //Run the get messages function in order to load in all the messages
     getMessages();
 
-    //Reload all messages every 10 seconds
+    //Reload all messages every 10 seconds using setInterval
     setInterval(() => {
       getMessages();
     }, 10000);
@@ -57,30 +58,39 @@ const Room = () => {
       <div className="container">
         
         <div className="messages-wrapper">
+          {/* Greetings header that displays the value of the user state variable */}
           <h1 className="greeting">Hello {user}</h1>
           <div className="messages-rooms-wrapper">
             <div className="messages">
+              {/* Represents the title of each chat in the main chat box. Because it uses room ID to display those titles and room ID is lowercase, must use charAt to grab the first letter of each title, capitalize it and then combine it with everything after the first letter. */}
               <h3 className="chat-title">
                 {roomID.charAt(0).toUpperCase()}
                 {roomID.substring(1)} Chat
               </h3>
               {messages ? (
-                //Messages refers to an array of message objects. Message refers to the individual message object itself(which holds author, messageBody, roomID etc.)
+                //If messages is defined, loop through it and display various elements. Messages refers to an array of message objects. Message refers to the individual message object itself(which holds author, messageBody, roomID etc.)
                 messages.map((message, index) => (
                   <div key={index}>
                     <p>
+                      {/* Display the author of the message along with the message itself using the properties of the message object. Put the author of the message, aka username into a strong to make it bold. */}
                       <strong>{message.author}</strong>: {message.messageBody}
                     </p>
+
                     <p>Created on: {new Date(message.when).toLocaleString()}</p>
                   </div>
                 ))
-              ) : (
+              )  
+              // If messages is undefined, just create an empty p tag.
+              : (
                 <p></p>
               )}
             </div>
 
             <div className="rooms">
+              {/* Represents the header at the top of the rooms nav bar. */}
               <h3 className="room-title">Rooms</h3>
+
+              {/* If the current room ID is equal to a certain room title, it means we are currently in that room. Give the element a class of highlight in order to have it stay highligted when selected. Otherwise, just add a class of an empty string. */}
               <a
                 className={roomID === "main" ? "highlight" : ""}
                 href="/room/main"
@@ -102,15 +112,18 @@ const Room = () => {
             </div>
           </div>
           <div className="controls">
+            {/* Represents the textbox for the message. */}
           <input
             id="messageContent"
             type="text"
             name="messageBody"
             placeholder="What would you like to say?"
           />
+          {/* Submit button which runs the submitMessage function when clicked */}
           <button className="control-button" onClick={submitMessage} value="send">
             Submit
           </button>
+          {/* Refresh button which refreshes the messages by running the getMessages function when clicked */}
           <button className="control-button" onClick={getMessages} value="refresh">
             Refresh
           </button>

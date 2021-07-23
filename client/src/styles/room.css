@@ -78,22 +78,23 @@
     padding-left: 5px;
 }
 .controls{
-    /* border: 3px solid black;
-    border-radius: 5px; */
     display: flex;
     margin-top: 20px;
     justify-content: center;
     margin-right: 100px;
 }
 
+/* Shift the buttons to the right */
 .control-button {
     margin-left: 10px;
 }
 
+/* Change the color of the background */
 body{
     background-color: rgb(246, 237, 220);
 }
 
+/* Center the greeting that states " Hello 'User' " */
 .greeting{
     text-align: center;
 }
