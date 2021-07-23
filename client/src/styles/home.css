@@ -13,6 +13,7 @@
     text-align: center;
 }
 
+/* Represents the chat card with a black border*/
 .user-name-card{
     background-color: papayawhip;
     border: 3px solid black;
@@ -23,11 +24,13 @@
     align-items: center;
 }
 
+/* Increase the size of the text box on the home page and reposition it */
 .user-name-input{
     margin-top: 30px;
     font-size: 30px;
 }
 
+/* Increase the size of the submit button */
 .user-name-submit{
     font-size: 20px;
     margin-top: 25px;
