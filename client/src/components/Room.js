@@ -26,6 +26,8 @@ const Room = () => {
         "content-type": "application/json",
       },
     });
+    // remove the text content from the input field after submitting message
+    document.getElementById("messageContent").value = ""
     //Load the messages after a new message has been sent
     getMessages();
   }
