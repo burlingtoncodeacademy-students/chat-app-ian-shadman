@@ -4,19 +4,31 @@
     flex-direction: column;
 }
 
+.home-header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+/* set width to keep message wrapper a fixed size regardless of length of the message */
 .messages-wrapper{
     border: 5px solid rgb(219, 175, 104);
-    display: flex;
-    justify-content: center;
+    width: 25vw;
     background-color: papayawhip;
-    padding: 100px 200px;
+    margin-top: 100px;
+    padding: 0 200px 100px 200px;
 }
 
+.messages-rooms-wrapper {
+    display: flex;
+    justify-content: center;
+}
+/* set width to keep message box to be 80% of the message-wrapper despite message length. allows message content to wrap */
 .messages{
     border: 5px solid black;
     /* If a scrollbar is needed it will appear. Otherwise it will stay hidden. */
     overflow-y: auto;
     height: 50vh;
+    width: 80%;
     padding: 15px;
 }
 
@@ -24,20 +36,45 @@
     display: flex;
     flex-direction: column;
     margin-left: 15px;
-
+    border: 5px solid black;
+    height: 20%
 }
 
-.controls{
-    border: 3px solid black;
+.rooms a{
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.rooms a:hover {
+    background-color: rgb(219, 175, 104)
+}
+
+.rooms a:active {
+    background-color: rgb(211, 157, 70);
+}
+
+.highlight {
+    background-color: rgb(219, 175, 104);
+}
+
+.room-title {
+    padding-left: 5px;
+}
+.controls{
+    /* border: 3px solid black;
+    border-radius: 5px; */
     display: flex;
     margin-top: 20px;
     justify-content: center;
     margin-right: 100px;
 }
 
-.rooms a{
-    text-decoration: none;
+.control-button {
+    margin-left: 10px;
 }
 
 body{

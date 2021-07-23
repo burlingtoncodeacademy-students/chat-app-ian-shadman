@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+.home-header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
 .user-name-card{
     background-color: papayawhip;
     border: 3px solid black;
