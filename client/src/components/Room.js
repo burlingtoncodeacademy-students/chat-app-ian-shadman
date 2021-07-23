@@ -1,10 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../styles/room.css";
 import React from "react";
 
 const Room = () => {
   const [messages, setMessages] = useState("");
   const [user, setUser] = useState("");
+
+  // allows div to be targeted based on their ref property
+  const messagesRef = useRef(null)
+  // scrollToBottom function scrolls to the bottom of the messages whenever a new message is added
+  function scrollToBottom() {
+    // scrolls to div with ref=messagesRef. behavior: instant snaps to bottom when new message is added.
+    messagesRef.current.scrollIntoView({ behavior: "instant" })
+  }
+  // useEffect occurs when messages changes
+  useEffect(() => {
+    // calls scrolltobottom function
+    scrollToBottom()
+  }, [messages])
 
   //Because slice returns an array, we need to take the first element
   const roomID = window.location.href.split("/").slice(-1)[0];
@@ -66,6 +79,7 @@ const Room = () => {
                 {roomID.charAt(0).toUpperCase()}
                 {roomID.substring(1)} Chat
               </h3>
+              <div>
               {messages ? (
                 //Messages refers to an array of message objects. Message refers to the individual message object itself(which holds author, messageBody, roomID etc.)
                 messages.map((message, index) => (
@@ -79,6 +93,9 @@ const Room = () => {
               ) : (
                 <p></p>
               )}
+              {/* div that scrollToBottom scrolls to when messages is updated. this div is below messages so it always scrolls to the newest message at the bottom */}
+              <div ref={messagesRef} />
+              </div>
             </div>
 
             <div className="rooms">
