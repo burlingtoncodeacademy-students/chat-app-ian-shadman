@@ -1,0 +1,28 @@
+.user-name-wrapper{
+    display: flex;
+    /* Make it so that it takes up the whole screen */
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name-card{
+    background-color: papayawhip;
+    border: 3px solid black;
+    width: 650px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-name-input{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.user-name-submit{
+    font-size: 20px;
+    margin-top: 25px;
+}

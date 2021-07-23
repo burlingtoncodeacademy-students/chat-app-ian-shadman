@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.messages-wrapper{
+    border: 5px solid rgb(219, 175, 104);
+    display: flex;
+    justify-content: center;
+    background-color: papayawhip;
+    padding: 100px 200px;
+}
+
+.messages{
+    border: 5px solid black;
+    /* If a scrollbar is needed it will appear. Otherwise it will stay hidden. */
+    overflow-y: auto;
+    height: 50vh;
+    padding: 15px;
+}
+
+.rooms{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+}
+
+.controls{
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.rooms a{
+    text-decoration: none;
+}
+
+body{
+    background-color: rgb(246, 237, 220);
+}
+
+.greeting{
+    text-align: center;
+}
