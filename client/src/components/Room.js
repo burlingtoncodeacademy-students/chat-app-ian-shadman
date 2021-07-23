@@ -52,7 +52,7 @@ const Room = () => {
 
   return (
     <div>
-      <h1 className="home-header">Chat App</h1>
+      <h1 className="home-header"><a className="header-link" href="/">Chat App</a></h1>
 
       <div className="container">
         
@@ -101,8 +101,7 @@ const Room = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="controls">
+          <div className="controls">
           <input
             id="messageContent"
             type="text"
@@ -116,6 +115,8 @@ const Room = () => {
             Refresh
           </button>
         </div>
+        </div>
+        
       </div>
     </div>
   );

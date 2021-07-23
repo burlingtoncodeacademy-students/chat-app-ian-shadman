@@ -9,13 +9,19 @@
     width: 100%;
     text-align: center;
 }
+
+.header-link {
+    text-decoration: none;
+    color: black;
+}
 /* set width to keep message wrapper a fixed size regardless of length of the message */
 .messages-wrapper{
     border: 5px solid rgb(219, 175, 104);
-    width: 25vw;
+    width: 35vw;
     background-color: papayawhip;
-    margin-top: 100px;
-    padding: 0 200px 100px 200px;
+    margin-top: 85px;
+    margin-bottom: 100px;
+    padding: 0 100px 50px 100px;
 }
 
 .messages-rooms-wrapper {
@@ -50,15 +56,22 @@
 }
 
 .rooms a:hover {
-    background-color: rgb(219, 175, 104)
+    background-color: rgb(219, 175, 104);
+    box-shadow: 0px 0px 3px rgb(99, 99, 99);
 }
 
 .rooms a:active {
     background-color: rgb(211, 157, 70);
+    box-shadow: inset 0px 0px 2px black
 }
 
 .highlight {
-    background-color: rgb(219, 175, 104);
+    background-color: rgb(211, 157, 70);
+}
+
+.highlight:hover {
+    background-color: rgb(211, 157, 70) !important;
+    box-shadow: none !important;
 }
 
 .room-title {
