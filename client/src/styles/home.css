@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
 }
-
+/* set position to absolute to keep header from pushing content down. gave width of 100% to allow text align center to center on page. */
 .home-header {
     position: absolute;
     width: 100%;

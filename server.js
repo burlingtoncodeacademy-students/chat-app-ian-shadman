@@ -13,10 +13,6 @@ mongodb+srv://user:${process.env.PASSWORD}@cluster0.ai7da.mongodb.net/chatroom?r
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-// mongoose.connect(
-//   `mongodb://localhost:27017/test`,
-//   { useNewUrlParser: true, useUnifiedTopology: true }
-// );
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error"));
