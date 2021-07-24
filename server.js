@@ -53,6 +53,12 @@ app.post("/rooms/:roomID/messages", async (req, res) => {
   let when = new Date()
   // Grab the roomID from the url and set it to a variable roomID
   let roomID = req.params.roomID
+
+  // Check if the messageBody is greater than 500 characters in the back end as well in order to prevent malicious requests. Anyone can create messages (of whatever length) without this code block. 
+  if(messageBody.length > 500){
+    // Status 400 means that there has been an invalid request. Return that to stop the message from being put into the database.
+    return res.sendStatus(400);
+  }
   
   // Create an instance of the schema and map it with the variables that were just created above
   const response = new HomeMessage({
