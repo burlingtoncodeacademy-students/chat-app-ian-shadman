@@ -2,7 +2,7 @@ import "../styles/home.css";
 
 const Home = () => {
   const submitName = () => {
-    // set userName to user input from input with id "user-name" 
+    // set userName to user input from input with id "user-name"
     let userName = document.getElementById("user-name").value;
     //Store the username in a cookie
     document.cookie = `userName=${userName}`;
