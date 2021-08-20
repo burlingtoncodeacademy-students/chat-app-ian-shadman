@@ -76,8 +76,11 @@ app.post("/rooms/:roomID/messages", async (req, res) => {
 //Get all the messages in a room
 app.get("/rooms/:roomID/messages", async (req, res) => {
   let messages = await HomeMessage.find({roomID:req.params.roomID})
-  //Messages is a mongoose array which holds metadata about the changes to the array. Must be converted into a plain JavaScript array.
   res.send(messages)
+})
+
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/client/build/index.html")
 })
 
 app.listen(port, () => {

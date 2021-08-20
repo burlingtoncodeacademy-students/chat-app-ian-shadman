@@ -89,7 +89,7 @@ const Room = () => {
 
   return (
     <div>
-      <h1 className="home-header"><a className="header-link" href="/">Chat App</a></h1>
+      <h1 className="home-header"><a className="header-link" href="/">Chat Room App</a></h1>
 
       <div className="container">
 
