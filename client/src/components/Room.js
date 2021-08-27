@@ -36,7 +36,7 @@ const Room = () => {
       return;
     }
     //Make a post request to the "messages" endpoint.
-    await fetch(`https://limitless-headland-30461.herokuapp.com/rooms/${roomID}/messages`, {
+    await fetch(`/rooms/${roomID}/messages`, {
       method: "POST",
       //Send the username and message content
       //JSON.stringify converts the body object into a string(Body object contains the user data we want to send to the server)
