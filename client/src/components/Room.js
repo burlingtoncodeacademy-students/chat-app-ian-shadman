@@ -57,7 +57,7 @@ const Room = () => {
 
   function getMessages() {
     //Fetch all the messages from the server and store it in the messages state variable.
-    fetch(`http://localhost:8000/rooms/${roomID}/messages`)
+    fetch(`/rooms/${roomID}/messages`)
       .then((res) => res.json())
       .then((res) => {
         setMessages(res);
