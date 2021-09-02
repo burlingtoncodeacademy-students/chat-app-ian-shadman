@@ -22,13 +22,13 @@ app.use(express.static(staticDir));
 // Wasn't able to access req.body so had to use this line
 app.use(express.json());
 // Was running into server connection issues. Stackoverflow suggested using these response headers, which seemed to solve the problem.
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Expose-Headers", "*");
-  res.header("Access-Control-Allow-Methods", "*");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+//   res.header("Access-Control-Allow-Headers", "*");
+//   res.header("Access-Control-Expose-Headers", "*");
+//   res.header("Access-Control-Allow-Methods", "*");
+//   next();
+// });
 
 app.use(express.urlencoded({ extended: true }));
 
