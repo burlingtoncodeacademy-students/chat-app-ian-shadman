@@ -1,0 +1,148 @@
+/* keeps page content centered */
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* set position to absolute to keep header from pushing content down. gave width of 100% to allow text align center to center on page. */
+.home-header {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+/* removed styling from anchor tag on header */
+.header-link {
+  text-decoration: none;
+  color: black;
+}
+/* set width to keep message wrapper a fixed size regardless of length of the message */
+.messages-wrapper {
+  border: 5px solid rgb(219, 175, 104);
+  width: 55vw;
+  background-color: papayawhip;
+  margin-top: 85px;
+  margin-bottom: 100px;
+}
+/* wrapper containing the messages and rooms div. display flex to display divs in a row */
+.messages-rooms-wrapper {
+  display: flex;
+  justify-content: center;
+}
+/* set width to keep message box to be 80% of the message-wrapper despite message length. allows message content to wrap */
+.messages {
+  border: 5px solid black;
+  /* If a scrollbar is needed it will appear. Otherwise it will stay hidden. */
+  overflow-y: auto;
+  height: 50vh;
+  padding: 15px;
+  margin-left: 50px;
+}
+/* message content containing the date of each message */
+.message-date {
+  /* smaller size */
+  font-size: 0.9em;
+  /* slightly transparent */
+  color: rgba(0, 0, 0, 0.7);
+}
+/* contains rooms title and links to each room. */
+.rooms {
+  display: flex;
+  flex-direction: column;
+  /* margin-left 15px to create space between rooms and messages. */
+  margin-left: 15px;
+  margin-right: 50px;
+  border: 5px solid black;
+  height: 20%;
+}
+/* removed styling from anchor. gave each a rounded border and padding to give appearance of button */
+.rooms a {
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+/* on hover, background darkens and boxshadow appears directly behind border with a 3 pixel blur. */
+.rooms a:hover {
+  background-color: rgb(219, 175, 104);
+  box-shadow: 0px 0px 3px rgb(99, 99, 99);
+}
+/* on active/click, background darkens further and boxshadow appears within border, causing button to appear depressed */
+.rooms a:active {
+  background-color: rgb(211, 157, 70);
+  box-shadow: inset 0px 0px 2px black;
+}
+/* link with class highlight appears darker to indicate which room user is currently in */
+.highlight {
+  background-color: rgb(211, 157, 70);
+}
+/* when hovering over link with class highlight, override other hover styling to keep appearance the same. */
+.highlight:hover {
+  background-color: rgb(211, 157, 70) !important;
+  box-shadow: none !important;
+}
+/* padding to shift title away from border */
+.room-title {
+  padding-left: 5px;
+}
+/* textarea, refresh and submit buttons */
+.controls {
+  /* keeps buttons and textarea same height */
+  display: flex;
+  /* creates space between controls and messages div*/
+  margin-top: 20px;
+  /* same margin left as messages div to keep them aligned */
+  margin-left: 50px;
+  margin-bottom: 20px;
+  min-width: 100%;
+}
+
+/* submit and refresh buttons */
+.control-button {
+  /* creates space between buttons and textarea */
+  margin-left: 10px;
+  /* change cursor to pointer when hovering over button */
+  cursor: pointer;
+  /* remove innate button border */
+  border: none;
+  background-color: rgb(219, 175, 104);
+  border-radius: 5px;
+}
+/* change background color on hover */
+.control-button:hover {
+  background-color: rgb(211, 157, 70);
+}
+/* darker background and inset box shadow causes button to look clicked down */
+.control-button:active {
+  background-color: rgb(206, 147, 53);
+  box-shadow: inset 0 0 3px rgb(109, 70, 8);
+}
+/* where use types message content */
+#messageContent {
+  /* height and width makes text area larger and more responsive with different page sizes */
+  height: 30px;
+  width: 30%;
+  /* removes innate textarea blue outline when textarea is being typed in */
+  outline: none;
+  /* changing the box's size messed with the page layout, this removes the ability to do so.  */
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Change the color of the background */
+body {
+  background-color: rgb(246, 237, 220);
+}
+
+/* Center the greeting that states " Hello 'User' " */
+.greeting {
+  text-align: center;
+}
+
+/* Style the error message by making it the same width as the messages div. Set the color red and align the text */
+.error-msg {
+  width: 80%;
+  text-align: center;
+  color: red;
+}

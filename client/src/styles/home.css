@@ -1,0 +1,38 @@
+.user-name-wrapper{
+    display: flex;
+    /* Make it so that it takes up the whole screen */
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+/* set position to absolute to keep header from pushing content down. gave width of 100% to allow text align center to center on page. */
+.home-header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 41px;
+}
+
+/* Represents the chat card with a black border*/
+.user-name-card{
+    background-color: papayawhip;
+    border: 3px solid black;
+    width: 650px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Increase the size of the text box on the home page and reposition it */
+.user-name-input{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+/* Increase the size of the submit button */
+.user-name-submit{
+    font-size: 20px;
+    margin-top: 25px;
+}
